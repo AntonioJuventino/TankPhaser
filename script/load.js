@@ -1,5 +1,5 @@
 var loadState = {
-
+		//SET PRELOAD BAR
 
 	setPreloadBar: function(){
 		this.prealoadBar = null;
@@ -11,6 +11,14 @@ var loadState = {
 	},
 
 
+
+	loadScripts: function(){
+		this.game.load.script('mainMenu.js' , 'script/mainMenu.js');
+	},
+
+
+
+	//LOAD ALL ASSETS
 
 	loadImages: function(){
 
@@ -26,6 +34,10 @@ var loadState = {
 		this.load.image('m6_frame','../assets/images/Tanks/M-6_frame.png');
 		this.load.image('m6_tower','../assets/images/Tanks/M-6_tower.png');
 
+
+
+		this.load.image('bullet','../assets/images/Tanks/bullet.png');
+
 		this.load.image('kv2','../assets/images/Tanks/KV-2_preview.png');
 
 
@@ -37,6 +49,11 @@ var loadState = {
 	loadSound: function(){
 		this.load.audio('mainTheme','../assets/music/MainTitle.mp3');
 	},
+
+
+	loadPhysics: function(){
+		this.load.physics('physics', '../assets/physics/tank_physics.json');
+	},
 	
 	
 
@@ -46,12 +63,14 @@ var loadState = {
 		this.setPreloadBar();
 		this.loadImages();
 		this.loadSound();
-
-		//SET PRELOAD BAR
+		this.loadPhysics();
+		this.loadScripts();
 
 		
 
-		//LOAD ALL ASSETS
+		
+
+		
 
 		
 
